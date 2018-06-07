@@ -1,0 +1,1562 @@
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 40
+- reduce by rule: expression -> NOT expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 41
+- reduce by rule: expression -> MINUS expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 42
+- reduce by rule: expression -> PLUS expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 51
+- reduce by rule: expression -> expression ASSIGN expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 52
+- reduce by rule: expression -> expression PLUS expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 53
+- reduce by rule: expression -> expression MINUS expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 54
+- reduce by rule: expression -> expression MUL expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 55
+- reduce by rule: expression -> expression DIV expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 56
+- reduce by rule: expression -> expression MOD expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 57
+- reduce by rule: expression -> expression EQ expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 58
+- reduce by rule: expression -> expression NEQ expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 59
+- reduce by rule: expression -> expression GT expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 60
+- reduce by rule: expression -> expression GTE expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 61
+- reduce by rule: expression -> expression LT expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 62
+- reduce by rule: expression -> expression LTE expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 63
+- reduce by rule: expression -> expression AND expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 64
+- reduce by rule: expression -> expression OR expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 65
+- reduce by rule: expression -> expression INSTANCEOF expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 81
+- reduce by rule: filterArg -> COLON expression
+- shift token (then go to state 37)
+Conflict in grammar: multiple actions possible when lookahead token is DOT in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 19)
+Conflict in grammar: multiple actions possible when lookahead token is PIPE in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 20)
+Conflict in grammar: multiple actions possible when lookahead token is LBRACKET in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 21)
+Conflict in grammar: multiple actions possible when lookahead token is ASSIGN in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 22)
+Conflict in grammar: multiple actions possible when lookahead token is PLUS in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 23)
+Conflict in grammar: multiple actions possible when lookahead token is MINUS in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 24)
+Conflict in grammar: multiple actions possible when lookahead token is MUL in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 25)
+Conflict in grammar: multiple actions possible when lookahead token is DIV in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 26)
+Conflict in grammar: multiple actions possible when lookahead token is MOD in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 27)
+Conflict in grammar: multiple actions possible when lookahead token is EQ in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 28)
+Conflict in grammar: multiple actions possible when lookahead token is NEQ in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 29)
+Conflict in grammar: multiple actions possible when lookahead token is GT in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 30)
+Conflict in grammar: multiple actions possible when lookahead token is GTE in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 31)
+Conflict in grammar: multiple actions possible when lookahead token is LT in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 32)
+Conflict in grammar: multiple actions possible when lookahead token is LTE in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 33)
+Conflict in grammar: multiple actions possible when lookahead token is AND in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 34)
+Conflict in grammar: multiple actions possible when lookahead token is OR in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 35)
+Conflict in grammar: multiple actions possible when lookahead token is INSTANCEOF in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 36)
+Conflict in grammar: multiple actions possible when lookahead token is QUESTION in state 82
+- reduce by rule: expression -> expression QUESTION expression COLON expression
+- shift token (then go to state 37)
+
+States with conflicts:
+State 40
+  expression -> NOT expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 41
+  expression -> MINUS expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 42
+  expression -> PLUS expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 51
+  expression -> expression ASSIGN expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 52
+  expression -> expression PLUS expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 53
+  expression -> expression MINUS expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 54
+  expression -> expression MUL expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 55
+  expression -> expression DIV expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 56
+  expression -> expression MOD expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 57
+  expression -> expression EQ expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 58
+  expression -> expression NEQ expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 59
+  expression -> expression GT expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 60
+  expression -> expression GTE expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 61
+  expression -> expression LT expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 62
+  expression -> expression LTE expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 63
+  expression -> expression AND expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 64
+  expression -> expression OR expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 65
+  expression -> expression INSTANCEOF expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 81
+  filterArg -> COLON expression . #lookaheads= PIPE DOT SEMICOLON EOF LBRACKET RBRACKET COMMA COLON ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF RPAREN RBRACE QUESTION
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
+State 82
+  expression -> expression QUESTION expression COLON expression . #lookaheads= EOF SEMICOLON DOT PIPE LBRACKET ASSIGN PLUS MINUS MUL DIV MOD EQ NEQ GT GTE LT LTE AND OR INSTANCEOF QUESTION RBRACKET COMMA COLON RPAREN RBRACE
+  expression -> expression .DOT ID args
+  expression -> expression .PIPE ID filterArg
+  expression -> expression .LBRACKET expression RBRACKET
+  expression -> expression .ASSIGN expression
+  expression -> expression .PLUS expression
+  expression -> expression .MINUS expression
+  expression -> expression .MUL expression
+  expression -> expression .DIV expression
+  expression -> expression .MOD expression
+  expression -> expression .EQ expression
+  expression -> expression .NEQ expression
+  expression -> expression .GT expression
+  expression -> expression .GTE expression
+  expression -> expression .LT expression
+  expression -> expression .LTE expression
+  expression -> expression .AND expression
+  expression -> expression .OR expression
+  expression -> expression .INSTANCEOF expression
+  expression -> expression .QUESTION expression COLON expression
