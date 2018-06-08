@@ -48,8 +48,10 @@
 * einfache Ausdrücke
 * wenn sich eine Variable ändert, wird der komplette Ausdruck neu berechnet
 
-![](angular-example.png)
-
+<p style="position: relative; text-align: center;">
+<img src="angular-example.png">
+<img width="250px" style="position: absolute; z-index: 1000; bottom: -10px; left: -10px;" src="trollface1.png"/>
+</p>
 ---
 
 # Zurück zum Thema: Grammatik
@@ -383,4 +385,22 @@ Grundlegende Operationen auf <i>praktischen</i> Sprachen sind:
 
 # Parsen mittels Kombinatoren
 
-Beispiel:
+Beispiel: ein Wort konsumieren
+
+```csharp
+bool TryConsume(ref int position, string text) {
+  if(input.At(position).startsWith(text)) {
+    position += text.Length;
+    return true;
+  } else
+    return false;
+}
+```
+
+Konkatenation:
+
+```csharp
+
+```
+
+---
