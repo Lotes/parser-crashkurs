@@ -400,7 +400,7 @@ bool TryConsume(ref int position, string text) {
 Konkatenation:
 
 ```csharp
-
+bool
 ```
 
 ---
