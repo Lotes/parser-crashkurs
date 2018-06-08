@@ -1,0 +1,15 @@
+code.remark-inline-code, .remark-code-line {
+  font-family: monospace;
+}
+
+code.remark-inline-code {
+  background: #f8f8f8;
+}
+
+.remark-slide {
+  font-family: sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: sans-serif !important;
+}

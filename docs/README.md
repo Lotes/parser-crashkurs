@@ -158,9 +158,9 @@ expression      : literal
 
 * Formale Sprachen (Chomsky-Hierarchie)
   * Typ-0-Grammatik: semientscheidbare Sprachen (unbeschränkt)
-  * Typ-1-Grammatik: kontextsensitive Sprachen (2^O(n))
-  * Typ-2-Grammatik: kontextfreie Sprachen (O(n^3))
-  * Typ-3-Grammatik: reguläre Ausdrücke (O(n))
+  * Typ-1-Grammatik: kontextsensitive Sprachen (`2^O(n)`)
+  * Typ-2-Grammatik: kontextfreie Sprachen (`O(n^3)`)
+  * Typ-3-Grammatik: reguläre Ausdrücke (`O(n)`)
   * Typ 3 &#x2282; Typ 2 &#x2282; Typ 1 &#x2282; Typ 0
 
 <div style="position: relative;  text-align: center;">
@@ -212,8 +212,8 @@ HEX_NUMBER ::= [0-9a-fA-F]+
 
 # Lexikalische Analyse
 
-* Beispiel: "12 * i + 5" wäre
-	* (NUM, "12"), (MUL, "*"), (ID, "i"), (ADD, "+"), (NUM, "5")
+* Beispiel: `12 * i + 5` wäre
+	* `(NUM, "12")`, `(MUL, "*")`, `(ID, "i")`, `(ADD, "+")`, `(NUM, "5")`
 * "Komplexität" 10 zu 5
 * Werkzeug dazu: "Lexer" oder "Scanner" oder "Tokenizer"
 * Artikel: [Wie schreibt man einen Lexer?](http://blog.lotes-lab.de/how-to-build-a-lexer/)
@@ -230,4 +230,157 @@ HEX_NUMBER ::= [0-9a-fA-F]+
 
 ---
 
-#
+---
+
+TODO
+
+* Parsergeneratoren LL/LR erklären
+  * LL(1)
+    * FIRST-Mengen, Follow-Mengen
+    * Parsertabelle
+* Unterschiede/Gemeinsamkeiten
+* Fehlerbehandlung/Autocompletion
+* AST abwandern: Validierung, Generierung
+---
+
+---
+
+# Gängige Probleme
+
+TODO
+
+* Mehrdeutigkeiten beseitigen!
+  * if-then-else: Dangling else
+* shift/reduce nachgucken
+* Operatorvorangregeln
+* Linksfaktorisierung
+* Linksrekursion
+* Listenausdrücke
+* Operatorenassoziativität
+
+---
+
+# Parser ohne Generator
+
+* zwei Wege
+  * in LL-Manier rekursiv absteigen
+  * Parser-Kombinatoren
+
+---
+
+# Parsen mittels Rekursion
+
+* Voraussetzung: LL(1)-Grammatik liegt vor
+  * keine Mehrdeutigkeiten
+  * keine Linksrekursionen
+  * keine Linksfaktorisierungen
+
+---
+
+# Parsen mittels Rekursion
+
+Zum Beispiel:
+
+```ebnf
+Expr ::= Term '+' Expr | Term
+Term ::= Primary '*' Term | Term
+Primary ::= NUMBER | '(' Expr  ')'
+```
+
+---
+
+# Parsen mittels Rekursion
+
+Implementierung: Jede Regel eine Funktion!
+
+```ebnf
+Expr ::= Term '+' Expr | Term
+```
+
+wird zu
+
+```csharp
+ExpressionNode Expression() {
+  var left = Term();
+  if(TryConsume(PLUS)) {
+
+    //if(lookahead.type==PLUS) {
+    //  lookahead++; return true; }
+    //  else return false;
+
+    var right = Expr();
+    return new BinaryExprNode(ADD, left, right);
+  } else {
+    return left;
+  }
+}
+```
+
+---
+
+# Parsen mittels Rekursion
+
+```ebnf
+Term ::= Primary '*' Term | Term
+```
+
+wird zu
+
+```csharp
+ExpressionNode Term() {
+  var left = Primary();
+  if(TryConsume(MUL)) { //lookahead
+    var right = Term();
+    return new BinaryExprNode(MULTIPLY, left, right);
+  } else {
+    return left;
+  }
+}
+```
+
+---
+
+# Parsen mittels Rekursion
+
+```ebnf
+Primary ::= NUMBER | '(' Expr  ')'
+```
+
+wird zu
+
+```csharp
+ExpressionNode Primary() {
+  var left = Primary();
+  switch(lookahead.Type) {
+    case NUMBER:
+      var result = new NumberLiteral(Convert.ToInt32(lookahead.Text)));
+      lookahead++;
+      return result;
+    case LPARENTHESIS:
+      NextToken();
+      var result = Expr();
+      Consume(RPARENTHESIS); //throws exception, if not exists
+      return result;
+  }
+  throw new Exception("No match, NUMBER OR '(' expected!");
+}
+```
+
+---
+
+# Parsen mittels Kombinatoren
+
+Im Prinzip genau das selbe! Nur in Funktionen versteckt.
+
+Grundlegende Operationen auf <i>praktischen</i> Sprachen sind:
+
+* Konsumierung von Buchstaben `'hallo'` (bilden ein <i>Wort</i>)
+* Konkatenierung von Wörtern `AB`
+* endliche Wiederholung von Wörtern `A*`
+* <u>priorisierte</u> Alternativen von Wörtern `A / B / C` (Patternmatching oder `switch`-Anweisung)
+
+---
+
+# Parsen mittels Kombinatoren
+
+Beispiel:
