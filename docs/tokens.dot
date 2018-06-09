@@ -1,0 +1,10 @@
+digraph G {
+  rankdir=LR;
+  node [shape=record];
+  token1 [label="{NUM|12}"];
+  token2 [label="{MUL|*}"];
+  token3 [label="{ID|i}"];
+  token4 [label="{ADD|+}"];
+  token5 [label="{NUM|5}"];
+  token1 -> token2 -> token3 -> token4 -> token5
+}

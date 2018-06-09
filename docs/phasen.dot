@@ -1,0 +1,11 @@
+digraph G {
+rankdir=LR;
+node [shape=rectangle];
+a3 [label="Semantische\nAnalyse"]
+subgraph cluster0 {
+  color=red;
+  label="Rahmen dieses Crashkurses";
+  "Lexikalische\nAnalyse"  -> "Syntaktische\nAnalyse" -> a3
+}
+ a3 -> "Zwischencode-\ngenerierung" -> "Optimierung" -> "Ausgabe"
+}

@@ -1,0 +1,25 @@
+digraph G {
+  node [shape=record];
+  node1 [label="NumericLiteral|12"];
+  node2 [label="BinaryOperation|MULTIPLY"];
+  node3 [label="Variable|i"];
+  node4 [label="BinaryOperation|ADD"];
+  node5 [label="NumericLiteral|5"];
+  node2 -> node1
+  node2 -> node3
+  node4 -> node2
+  node4 -> node5
+
+  edge [arrowhead=none;style=dashed;color=gray]
+  node [shape=note;fillcolor=lightyellow;style=filled]
+  note1 [label="type=int"]
+  note2 [label="type=double"]
+  note3 [label="type=double"]
+  note4 [label="type=double"]
+  note5 [label="type=int"]
+  node1 -> note1
+  node2 -> note2
+  node3 -> note3
+  node4 -> note4
+  node5 -> note5
+}

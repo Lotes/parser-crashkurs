@@ -1,0 +1,12 @@
+digraph G {
+  node [shape=record];
+  node1 [label="NumericLiteral|12"];
+  node2 [label="BinaryOperation|MULTIPLY"];
+  node3 [label="Variable|i"];
+  node4 [label="BinaryOperation|ADD"];
+  node5 [label="NumericLiteral|5"];
+  node2 -> node1
+  node2 -> node3
+  node4 -> node2
+  node4 -> node5
+}

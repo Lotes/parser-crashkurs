@@ -1,0 +1,15 @@
+digraph G {
+  rankdir=LR;
+  node [shape=record];
+  character1 [label="{1}"];
+  character2 [label="{2}"];
+  character3 [label="{ }"];
+  character4 [label="{*}"];
+  character5 [label="{ }"];
+  character6 [label="{i}"];
+  character7 [label="{ }"];
+  character8 [label="{+}"];
+  character9 [label="{ }"];
+  character10 [label="{5}"];
+  character1 -> character2 -> character3 -> character4 -> character5 -> character6 -> character7 -> character8 -> character9 -> character10
+}
