@@ -1,0 +1,19 @@
+digraph G {
+  node [shape=record];
+
+  op1 [label="{-10|SUB}"]
+  op2 [label="{-40|SUB}"]
+  op3 [label="{-80|SUB}"]
+
+  a1 [label="{NUM|10}"]
+  a2 [label="{NUM|20}"]
+  a3 [label="{NUM|30}"]
+  a4 [label="{NUM|40}"]
+
+  op1 -> a1
+  op1 -> a2
+  op2 -> a3
+  op2 -> op1
+  op3 -> op2
+  op3 -> a4
+}

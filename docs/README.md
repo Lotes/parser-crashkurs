@@ -1,6 +1,5 @@
-# Parser-Crashkurs
-
 <div style="text-align: center; position: relative">
+  <h1>Parser-Crashkurs</h1>
   <table style="margin: 0 auto">
     <tr>
       <td><img src="avatar.png" width="64" style="margin: 1em"/></td>
@@ -434,7 +433,7 @@ Digit ::= '0' | '1' ... '9'
 
 ---
 
-# `LL`-Ausgangsgrammatik
+# Nur 4 Regeln!
 
 <div style="text-align: center">
   <img src="rules.png"/>
@@ -550,15 +549,97 @@ F' ::= '++'
     |  &epsilon;
 ```
 
-Noch nicht! Neues Beispiel!
+### Noch nicht ganz fertig!
+
+Manche Generatoren (wie `jison`) mögen keine mit `*` oder `+` definierten Listen.
+
+```ebnf
+FunctionCall ::= Id '(' Arguments? ')'
+Arguments    ::= Argument (',' Argument)*
+```
 
 ---
 
 # Listen ausbauen
 
+Hier muss man die Iteration durch eine Rekursion ersetzen!
+
+
+<div style="text-align: center; float:right">
+  <img src="grins.png" width="200"/>
+  <br/><b>FERTIG?</b>
+</div>
+
+```èbnf
+FunctionCall ::= Id '(' ArgumentList ')'
+ArgumentList ::= Arguments
+              |  &epsilon;
+Arguments    ::= Argument Arguments'
+Arguments'   ::= &epsilon;
+              | ',' Arguments'
+```
+
 ---
 
 # Assoziativität
+
+Links oder rechts? Verdammt wichtig bei Operatoren!
+
+### Beispiel: Subtraktion mit `-`!
+
+Was ist der Syntaxbaum zu `10 - 20 - 30 - 40`?
+
+---
+
+<table width="100%">
+<tr>
+<td>
+<h3>Linksassoziativität</h3>
+</td>
+<td>
+<h3>Rechtsassoziativität</h3>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<img src="left-asso.dot.png" height="250"/>
+</td>
+<td>
+<img src="right-asso.dot.png" height="250"/>
+</td>
+</tr>
+
+<tr>
+<td>
+
+<code>
+SUB ::= SUB '-' NUM
+    |  NUM
+</code>
+
+</td>
+<td>
+
+<code>
+SUB ::= NUM '-' SUB
+    |  NUM
+</code>
+
+</td>
+</tr>
+
+
+<tr>
+<td>
+Linksrekursion auflösen wie vorhin gezeigt.
+</td>
+<td>
+Linksfaktor eliminieren wie vorhin gezeigt.
+</td>
+</tr>
+</table>
 
 ---
 
@@ -717,3 +798,11 @@ bool
   * Syntaxbaum generieren lassen
   * Syntaxbaum validieren
   * aus dem Baum das Endartefakt generieren
+
+---
+
+<div style="text-align: center">
+<h1>Danke für die Aufmerksamkeit!</h1>
+<img src="happy_hacking.gif"/>
+<h3>Happy hacking!</h3>
+</div>
