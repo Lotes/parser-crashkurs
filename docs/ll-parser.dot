@@ -1,0 +1,73 @@
+digraph G {
+  node [shape=record];
+  input [label="{NUM|3}|{MUL|<f0> *}|{NUM|4}|{ADD|+}|{NUM|5}"]
+  stack [label="{<f0>|S|EOS}",rankdir="LR"]
+  table [shape=plaintext;label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+      <TR>
+        <TD></TD>
+        <TD>NUM</TD>
+        <TD>+</TD>
+        <TD>*</TD>
+        <TD>(</TD>
+        <TD>$</TD>
+      </TR>
+      <TR>
+        <TD PORT="f0">S</TD>
+        <TD>S &rarr; E $</TD>
+        <TD></TD>
+        <TD></TD>
+        <TD>S &rarr; E $</TD>
+        <TD></TD>
+      </TR>
+      <TR>
+        <TD>E</TD>
+        <TD>E &rarr; T E'</TD>
+        <TD></TD>
+        <TD></TD>
+        <TD>E &rarr; T E'</TD>
+        <TD></TD>
+      </TR>
+      <TR>
+        <TD>E'</TD>
+        <TD></TD>
+        <TD>E' &rarr; + T E'</TD>
+        <TD></TD>
+        <TD></TD>
+        <TD>E' &rarr; &epsilon;</TD>
+      </TR>
+      <TR>
+        <TD>T</TD>
+        <TD>T &rarr; F T'</TD>
+        <TD></TD>
+        <TD></TD>
+        <TD>T &rarr; F T'</TD>
+        <TD></TD>
+      </TR>
+      <TR>
+        <TD>T'</TD>
+        <TD></TD>
+        <TD></TD>
+        <TD>T' &rarr; * F T'</TD>
+        <TD></TD>
+        <TD>T' &rarr; &epsilon;</TD>
+      </TR>
+      <TR>
+        <TD>F</TD>
+        <TD>F &rarr; NUM</TD>
+        <TD></TD>
+        <TD></TD>
+        <TD>F &rarr; ( E )</TD>
+        <TD></TD>
+      </TR>
+    </TABLE>>];
+
+    a [label="LL-Parser"]
+    a -> stack:f0 [label="Stack"]
+    input:f0 -> a [label="Eingabe"]
+    a -> table:f0 [label="Parser-Tabelle"]
+    {
+      rank = same;
+      a ; table
+    }
+}

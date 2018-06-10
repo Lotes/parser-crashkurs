@@ -1,5 +1,19 @@
 # Parser-Crashkurs
 
+<div style="text-align: center; position: relative">
+  <table style="margin: 0 auto">
+    <tr>
+      <td><img src="avatar.png" width="64" style="margin: 1em"/></td>
+      <td>
+        Markus Rudolph<br/>
+        <span style="vertical-align: middle">
+        <img src="github.png" width="34"/><strong>/ Lotes</strong>
+        </span>
+      </td>
+    </tr>
+  </table>
+</div>
+
 ---
 
 # Motivation
@@ -7,8 +21,7 @@
 * Verwendung von komplexen strukturierten Daten
 * Erstellen eigener menschenlesbarer Datenformate
 * Formulieren von Sachverhalt in der Domäne des Sachverhaltes (domänenspezifische Sprachen wie CSS)
-* Angst nehmen vor Sprachen zu entwickeln (Aufwand Parserentwicklung?)
-* Aufzeigen von Aufwänden nach dem Parsen
+* Angst nehmen Sprachen zu entwickeln
 
 ---
 
@@ -249,21 +262,6 @@ expression      : literal
 
 ---
 
-# Moment! Was sind Tokens?
-
-* werden nur beim **formalen Ansatz** gebraucht!
-* beliebter Ansatz: wandle den Strom an Characters um
-* ... in einen Strom von "Tokens" (Vorklassifizierung)
-* diese werden durch reguläre Ausdrücke beschrieben
-* Beispiel für Hexzahlen:
-
-```bnf
-HEX_NUMBER ::= [0-9a-fA-F]+
-```
-
-
----
-
 # Allgemeiner Verlauf
 
 ...für formale Grammatiken:
@@ -280,7 +278,7 @@ PEGs dagegen haben __keine__ lexikalische Analyse.
 Ein Strom von Charactern
 <img src="characters.dot.png" width="100%"/>
 
-wird zu
+wird zu einen Strom von Tokens
 
 <img src="tokens.dot.png" width="100%"/>
 
@@ -341,70 +339,246 @@ Darauffolgende Phasen auch! Darum gibt es hier einen Schnitt!
 <table style="width:100%">
 <tr>
 <td>
-Diese Sprachen sind in polynomieller Laufzeit erkennbar!
+<span style="font-size: 24px">Diese Sprachen sind in <i>polynomieller Laufzeit</i> erkennbar!</span>
 </td>
 <td>
-
+<img src="brent_rambo.gif" />
 </td>
 </tr>
 </table>
 
-# Typ-2: Kontextfreie Grammatiken
-
-* erkennbar mit CYK-Algorithmus in `O(n^3)` mittels dynamischer Programmierung
-* besser mittels LL(?)- und LR(?)-Parser
-  * das erste 'L' ist die Leserichtung
-  * der zweite Buchstabe sagt: "Ich fange mit der linken (rechten) Seite einer Grammatikregel an."
-  * das `?` steht für die Größe des Lookaheads
+<center>Das heißt aber auch, dass nach der Erkennung noch Validierungsarbeit zu leisten ist!</center>
 
 ---
 
 # Typ-3: Reguläre Ausdrücke
 
----
+* werden nur beim **formalen Ansatz** gebraucht!
+* Beispiel für Hexzahlen:
 
-TODO
+```bnf
+HEX_NUMBER ::= [0-9A-F]+
+```
 
-* Parsergeneratoren LL/LR erklären
-  * LL(1)
-    * FIRST-Mengen, Follow-Mengen
-    * Parsertabelle
-* Unterschiede/Gemeinsamkeiten
-* Fehlerbehandlung/Autocompletion
-* AST abwandern: Validierung, Generierung
----
+![HEX_NUMBER](.\hexnumber/HEX_NUMBER.svg)
 
 ---
 
-# Gängige Probleme
+# Typ-2: Kontextfreie Grammatiken
 
-TODO
+* erkennbar mit CYK-Algorithmus in `O(n^3)` mittels dynamischer Programmierung
+* besser mittels `LL(k)`- und `LR(k)`-Parser, für endliches `k`
 
-* Mehrdeutigkeiten beseitigen!
-  * if-then-else: Dangling else
-* shift/reduce nachgucken
-* Operatorvorangregeln
-* Linksfaktorisierung
-* Linksrekursion
-* Listenausdrücke
-* Operatorenassoziativität
-
----
-
-# Parser ohne Generator
-
-* zwei Wege
-  * in LL-Manier rekursiv absteigen
-  * Parser-Kombinatoren
+```ebnf
+Expr  ::= Expr '+' Expr
+        | Expr '*' Expr
+        | Num
+Num   ::= Num Digit | Digit
+Digit ::= '0' | '1' ... '9'
+```
 
 ---
 
-# Parsen mittels Rekursion
+# Syntaxdiagramm
 
-* Voraussetzung: LL(1)-Grammatik liegt vor
-  * keine Mehrdeutigkeiten
-  * keine Linksrekursionen
-  * keine Linksfaktorisierungen
+<table>
+<tr>
+<th>Expr</th>
+<td><img src=".\arithmetic/Expr.svg"/></td>
+</tr>
+
+<tr>
+<th>Num</th>
+<td><img src=".\arithmetic/Num.svg"/></td>
+</tr>
+
+<tr>
+<th>Digit</th>
+<td><img src=".\arithmetic/Digit.svg"/></td>
+</tr>
+</table>
+
+---
+
+# Kontextfreie Parser
+
+### `LL` und `LR`
+
+  * das erste `L` ist die Leserichtung
+  * der zweite Buchstabe sagt: "Ich fange mit der linken (rechten) Seite einer Grammatikregel an."
+  * `LL` heißen auch "Top-Down-Parser"
+  * `LR` heißen "Bottom-Up-Parser"
+
+---
+
+# Mächtigkeit von `LL`, `LR` und `PEG`
+
+* `LL` ist einfacher nachzubauen, hat aber mehr Einschränkungen
+* `LR` gibt es in verschiedenen Schwierigkeitsgeraden
+  * `SLR`, `LALR`, `LR(1)`, `LR(2)`...
+  * Linksfaktoren und Linksrekursionen möglich
+* `PEGs` sind nicht vergleichbar
+
+<div style="text-align: center">
+  <img src="grammatiken_vergleich.png" width="300" style="margin: 0 auto"/>
+</div>
+
+---
+
+# `LL`-Parser, kurz und gut
+
+<div style="position: relative">
+  <img src="ll1-grammar.png" style="position: absolute; right:0px; top:0px; z-index: 1000"/>
+  <img src="ll-parser.dot.png" width="100%"/>
+</div>
+
+---
+
+# `LL`-Ausgangsgrammatik
+
+<div style="text-align: center">
+  <img src="rules.png"/>
+</div>
+
+---
+
+# Mehrdeutigkeiten verstehen
+
+```ebnf
+Stmt ::= 'if' Expr 'then' Stmt 'else' Stmt
+      | 'if' Expr 'then' Stmt
+```
+
+Mögliche Syntaxbäume für
+
+```
+if condition then if(condition2)
+then A else B
+```
+
+<center>
+<img src="mehrdeutige-grammatik.dot.png"/>
+</center>
+
+---
+
+# Mehrdeutigkeiten auflösen
+
+Grammatik genauer formulieren!
+
+Beispiel:
+
+<div style="text-align: center; float:right">
+  <img src="grins.png" width="100"/>
+  <br/><b>FERTIG?</b>
+</div>
+
+```ebnf
+E ::= E '*' E
+   |  E '+' E
+   |  NUM
+   |  E '++'
+   |  '(' E ')'
+```
+
+Mehrdeutig! Beispiel an der Eingabe `1 * 2 + 3`
+<div style="text-align: center">
+<img src="petite_grammar_1.dot.png"/>
+</div>
+
+---
+
+# Vorrangregeln umsetzen
+
+Umsetzbar als Kaskade oder mit Generatorschaltern:
+
+<div style="text-align: center; float:right">
+  <img src="grins.png" width="120"/>
+  <br/><b>FERTIG?</b>
+</div>
+
+```ebnf
+E ::= T '+' E
+   |  T
+T ::= F '*' T
+   |  F
+F ::= F '++'
+   |  NUM
+   | '(' E ')'
+```
+
+`LR`-Parser ist zufrieden. `LL`-Parser ist unschlüssig, weil `E` zwei Alternativen hat, die mit `T` anfangen.
+
+---
+
+# Linksfaktoren eliminieren
+
+<div style="text-align: center; float:right">
+  <img src="grins.png" width="140"/>
+  <br/><b>FERTIG?</b>
+</div>
+
+```ebnf
+E  ::= T E'
+E' ::= '+' T E'
+    |  &epsilon;
+T  ::= F T'
+T' ::= '*' F T'
+    |  &epsilon;
+F  ::= F '++'
+    |  NUM
+    |  '(' E ')'
+```
+
+`LR`-Parser ist schon längst zufrieden.
+`LL`-Parser beschwert sich über die Linksrekursion in `F`.
+
+---
+
+# Linksrekursionen ersetzen
+
+<div style="text-align: center; float:right">
+  <img src="grins.png" width="160"/>
+  <br/><b>FERTIG?</b>
+</div>
+
+```ebnf
+...
+F  ::= NUM F'
+    |  '(' E ')' F'
+F' ::= '++'
+    |  &epsilon;
+```
+
+Noch nicht! Neues Beispiel!
+
+---
+
+# Listen ausbauen
+
+---
+
+# Assoziativität
+
+---
+
+# `LR`-Parser, kurz und gut
+
+
+
+---
+
+<center>
+  <h1>Manuelles Parsen</h1>
+  <h3>Zwei Wege</h3>
+
+  <p style="position: relative;">
+    <img src="matrix_pill.png" width="100%"/>
+    <div style="position: absolute; left: 0px; z-index: 1000; color: white; bottom: 0px; font-size: 36px; font-weight: bold">
+    Rekursiver Abstieg
+    </div>
+  </p>
+</center>
 
 ---
 
@@ -414,7 +588,7 @@ Zum Beispiel:
 
 ```ebnf
 Expr ::= Term '+' Expr | Term
-Term ::= Primary '*' Term | Term
+Term ::= Primary '*' Term | Primary
 Primary ::= NUMBER | '(' Expr  ')'
 ```
 
@@ -452,7 +626,7 @@ ExpressionNode Expression() {
 # Parsen mittels Rekursion
 
 ```ebnf
-Term ::= Primary '*' Term | Term
+Term ::= Primary '*' Term | Primary
 ```
 
 wird zu
@@ -533,3 +707,13 @@ bool
 ```
 
 ---
+
+# Abschließende Worte
+
+* Parser mittels Generatoren zu schreiben ist einfach
+* manuell zu schreiben ist unnötige sich wiederholende Arbeit (hat aber auch etwas meditatives xD...)
+* empfohlenes Vorgehen:
+  * Grammatik und Grammatiktests ausschreiben
+  * Syntaxbaum generieren lassen
+  * Syntaxbaum validieren
+  * aus dem Baum das Endartefakt generieren

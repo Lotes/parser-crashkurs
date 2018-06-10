@@ -1,0 +1,5 @@
+Expr  ::= Expr '+' Expr
+        | Expr '*' Expr
+        | Num
+Num   ::= Num Digit | Digit
+Digit ::= '0' | '1' |'2' |'...' | '9'
