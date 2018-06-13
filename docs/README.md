@@ -22,6 +22,9 @@
 * Formulieren von Sachverhalt in der Domäne des Sachverhaltes (domänenspezifische Sprachen wie CSS)
 * Angst nehmen Sprachen zu entwickeln
 
+<div style="color: gray; position: absolute; bottom: 1em; right: 1em; left: 1em">
+  Diese Präsentation wurde mittels Markdown-, GraphViz-, CSS- und EBNF-Sprachen realisiert. Änderungen konnten deswegen automatisiert umgesetzt werden.
+</div>
 ---
 
 # Abgrenzung
@@ -57,10 +60,12 @@
 
 # Inhalte
 
-* Grammatik schreiben
-* Grammatikbestandteile
-* Sprachklassen
-* Gängige Probleme
+<img src="roter_faden.jpg" style="float: right;"/>
+* Parsen mit Generator
+  * Grammatik schreiben
+  * Grammatikbestandteile
+  * Sprachklassen
+  * Gängige Probleme
 * Parsen ohne Generator
 
 ---
@@ -71,13 +76,15 @@
 <tr>
 <td>
   <p>&quot;Mich beliebt es <i>Angular-like</i> HTML-Komponenten mittels Expressions zu definieren. Ich gedenke mir dafür einen Parser zu schreiben. Alle existierenden Lösungen sind Firlefanz!&quot;</p>
-  <img src="lord_eingebildet.png"/>
+  <img src="lord_eingebildet.png"/><br/>
+  <div style="color: gray; font-size: smaller; font-align: right">- <i>Siegbert von Schnösel</i> -</div>
 </td>
 <td><img src="angular-grammar.png"/></td>
 </tr>
 </table>
 
 ---
+
 # Erklärung: Angular Expressions
 
 * einfache Ausdrücke
@@ -87,57 +94,89 @@
 <img src="angular-example.png">
 <img width="250px" style="position: absolute; z-index: 1000; bottom: -10px; left: -10px;" src="trollface1.png"/>
 </p>
----
-
-# Zurück zum Thema: Grammatik
-
-Erstmal am Beispiel arithmetischer Ausdrücke...
-
-```
-Expr  ::= Expr '+' Expr
-        | Expr '*' Expr
-        | Num
-Num   ::= Num Digit | Digit
-Digit ::= '0' | '1' ... '9'
-```
-
-Backus-Naur-Form!
-
-Terminal? Nichtterminal? Regel? Start?
 
 ---
 
-# Grammatik: Weitere Bestandteile
+# Operationen auf Sprachen
 
-* Pseudoterminale, Codeblöcke und Rückgabetypen
+* ein Wort `A` ist eine Abfolge von Buchstaben
+* die Konkatenation von Wörtern `A` und `B` ist wieder ein Wort `AB`.
+* die endliche Wiederholung eines Wortes `A` ist wieder ein Wort
+  * `A*` bedeutet `0` bis `n` mal
+  * `A+` bedeutet `1` bis `n` mal
+  * `A?` bedeutet `0` oder `1` mal
+* Die Vereinigung zweier Wörter `A` und `B` ist wieder ein Wort `A | B` (Alternation).
+* keine Sorge, es gibt noch mehr, aber zur weiteren Erklärung reicht das
 
-Beispiel:
+```ebnf
+[aa]* = &epsilon; | aa | aaaa | aaaaaa | ...
 ```
-Num <int>
-	::= Num Digit
-	    { $$ = $1 * 10 + $2; }
-```
-
-* Gängiges Vorgehen, ggf. unvermeidbar!
-* Bläht die Grammatik auf!
 
 ---
 
-# Grammatik: Weitere Bestandteile
+# Backus-Naur-Form
 
-* Metadaten
-* Importe
+### Grammatikregeln
+
+Eine Regel besteht aus einem Nichtterminal auf der linken Seite und einem Mix von Terminalen und Nichtterminalen auf der rechten Seite. Getrennt durch den `::=`-Operator.
+
+```ebnf
+NICHT-TERMINAL-A ::= MIX VON 'terminal' 'und' NICHT-TERMINAL-B
+```
+
+### Terminale
+
+Terminale produzieren Buchstaben für die zu bildene Sprache.
+Entweder in From von Strings oder in Form von regulären Ausdrücken.
+
+```ebnf
+'&&'    //in Form von Text
+[0-9]+  //in Form von regulären Ausdrücken
+```
+
+---
+
+# Backus-Naur-Form...
+
+### Nichtterminale
+
+Nichtterminale auf der linken Seite einer Regel kann man als Funktionsdefinition ansehen. Nichtterminale auf der rechten Seite sind so etwas wie Funktionsaufrufe innerhalb der Sprache.
+
+```ebnf
+NUM ::= DIGIT+
+DIGIT ::= '0' | ... | '9'
+```
+
+---
+
+# Backus-Naur-Form...
+
+### Pseudoterminale und Rückgabetypen
+
+Pseudoterminale produzieren keine Sprachteile, werden aber ausgeführt wenn der Parser an diesem Teil der Grammatik ankommt.
+
+```ebnf
+Num  <int> ::= Num Digit { $$ = $1 * 10 + atoi($2); }
+             | Digit     { $$ = atoi($1); }
+```
+
+Pseudoterminale sind ein gängiges Vorgehen um abstrakte Syntaxbäume aufzubauen und meistens unvermeidbar. Sie blähen die Grammatik stark auf!
+
+---
+
+# Backus-Naur-Form...
+
+### Plattformspezifische Bestandteile
+
+* Metadaten wie Klassennamen
+* Importe von Bilbliotheken oder Headers
 
 Beipiel aus NPegasus:
-```
+```ebnf
 @namespace MainCore.Common.Comments
 @classname CommentLineParser
 @using System.Linq;
 ```
-
----
-
-# Grammatik: Weitere Bestandteile
 
 * sonst "syntaktischer Zucker" wie \[Referenzen_in_XText\]
 * Prüfungen am Lookahead auch denkbar
@@ -145,7 +184,7 @@ Beipiel aus NPegasus:
 
 ---
 
-# Ausgangsgrammatik... Welches Tool?
+# Welches Tool?
 
 Ich benutze `Jison`. NodeJS. Installieren mit `npm i -g jison`.
 
@@ -179,8 +218,7 @@ expression      : literal
 
 ---
 
-
-<div style="margin: 0; text-align: center">
+<div style="margin: 0 auto; text-align: center">
 <h3>Wie wäre es mit etwas...</h3>
 <img src="housewife.png"/>
 </div>
@@ -190,10 +228,10 @@ expression      : literal
 # Sprackklassen
 
 * Formale Sprachen (Chomsky-Hierarchie)
-  * Typ-0-Grammatik: semientscheidbare Sprachen (unbeschränkt)
-  * Typ-1-Grammatik: kontextsensitive Sprachen (`2^O(n)`)
-  * Typ-2-Grammatik: kontextfreie Sprachen (`O(n^3)`)
-  * Typ-3-Grammatik: reguläre Ausdrücke (`O(n)`)
+  * Typ-0-Grammatik: semientscheidbare Sprachen
+  * Typ-1-Grammatik: kontextsensitive Sprachen
+  * Typ-2-Grammatik: kontextfreie Sprachen
+  * Typ-3-Grammatik: reguläre Ausdrücke
   * Typ 3 &#x2282; Typ 2 &#x2282; Typ 1 &#x2282; Typ 0
 
 <div style="position: relative;  text-align: center;">
@@ -226,93 +264,6 @@ expression      : literal
 </td>
 </tr>
 </table>
-
----
-
-# Unterschiede
-
-<table style="margin: 0">
-<tr>
-<td></td>
-<td>FormAL</td>
-<td>PEG</td>
-</tr>
-<tr>
-<td>bekannt seit</td>
-<td>ca. 1970</td>
-<td>2004</td>
-</tr>
-<tr>
-<td>Eingabe</td>
-<td>Token</td>
-<td>Character</td>
-</tr>
-<tr>
-<td>Laufzeit</td>
-<td>???</td>
-<td>???</td>
-</tr>
-<tr>
-<td>Speicherverbrauch</td>
-<td>???</td>
-<td>???</td>
-</tr>
-</table>
-
----
-
-# Allgemeiner Verlauf
-
-...für formale Grammatiken:
-<img src="phasen.dot.png" width="100%"/>
-
-PEGs dagegen haben __keine__ lexikalische Analyse.
-
----
-
-# Lexikalische Analyse
-
-<b>Beispiel</b>: `12 * i + 5`
-
-Ein Strom von Charactern
-<img src="characters.dot.png" width="100%"/>
-
-wird zu einen Strom von Tokens
-
-<img src="tokens.dot.png" width="100%"/>
-
-* "Komplexität" 10 zu 5
-* Werkzeug dazu: "Lexer" oder "Scanner" oder "Tokenizer"
-* Artikel: [Wie schreibt man einen Lexer?](http://blog.lotes-lab.de/how-to-build-a-lexer/)
-
----
-
-# Syntaktische Analyse
-
-Beispiel
-
-<img src="tokens.dot.png"/>
-
-wird zu einem abstrakten Syntaxbaum umgewandelt
-
-<img src="ast.dot.png"/>
-
----
-
-# Semantische Analyse
-
-* abstrakten Syntaxbaum validieren (`Visitor` pattern!)
-* Baum mit neuen Eigenschaften annotieren oder Fehler generieren
-
-<img src="semantic.dot.png"/>
-
----
-
-# Nächste Phasen
-
-Die semantische Phase erfordert Wissen über die Domäne.
-
-Darauffolgende Phasen auch! Darum gibt es hier einen Schnitt!
 
 ---
 
@@ -350,52 +301,59 @@ Darauffolgende Phasen auch! Darum gibt es hier einen Schnitt!
 
 ---
 
-# Typ-3: Reguläre Ausdrücke
+# Allgemeiner Verlauf
 
-* werden nur beim **formalen Ansatz** gebraucht!
-* Beispiel für Hexzahlen:
+...für formale Grammatiken:
+<img src="phasen.dot.svg" width="100%"/>
 
-```bnf
-HEX_NUMBER ::= [0-9A-F]+
-```
-
-![HEX_NUMBER](.\hexnumber/HEX_NUMBER.svg)
+PEGs dagegen haben __keine__ lexikalische Analyse.
 
 ---
 
-# Typ-2: Kontextfreie Grammatiken
+# Lexikalische Analyse
 
-* erkennbar mit CYK-Algorithmus in `O(n^3)` mittels dynamischer Programmierung
-* besser mittels `LL(k)`- und `LR(k)`-Parser, für endliches `k`
+<b>Beispiel</b>: `12 * i + 5`
 
-```ebnf
-Expr  ::= Expr '+' Expr
-        | Expr '*' Expr
-        | Num
-Num   ::= Num Digit | Digit
-Digit ::= '0' | '1' ... '9'
-```
+Ein Strom von Charactern
+
+<img src="characters.dot.svg" width="100%"/>
+
+wird zu einen Strom von Tokens
+
+<img src="tokens.dot.svg" width="100%"/>
+
+* "Komplexität" 10 zu 5
+* Werkzeug dazu: "Lexer" oder "Scanner" oder "Tokenizer"
+* Artikel: [Wie schreibt man einen Lexer?](http://blog.lotes-lab.de/how-to-build-a-lexer/)
 
 ---
 
-# Syntaxdiagramm
+# Syntaktische Analyse
 
-<table>
-<tr>
-<th>Expr</th>
-<td><img src=".\arithmetic/Expr.svg"/></td>
-</tr>
+Beispiel
 
-<tr>
-<th>Num</th>
-<td><img src=".\arithmetic/Num.svg"/></td>
-</tr>
+<img src="tokens.dot.svg"/>
 
-<tr>
-<th>Digit</th>
-<td><img src=".\arithmetic/Digit.svg"/></td>
-</tr>
-</table>
+wird zu einem abstrakten Syntaxbaum umgewandelt
+
+<img src="ast.dot.svg"/>
+
+---
+
+# Semantische Analyse
+
+* abstrakten Syntaxbaum validieren (`Visitor` pattern!)
+* Baum mit neuen Eigenschaften annotieren oder Fehler generieren
+
+<img src="semantic.dot.svg"/>
+
+---
+
+# Nächste Phasen
+
+Die semantische Phase erfordert Wissen über die Domäne.
+
+Darauffolgende Phasen auch! Darum gibt es hier einen Schnitt!
 
 ---
 
@@ -414,12 +372,12 @@ Digit ::= '0' | '1' ... '9'
 
 * `LL` ist einfacher nachzubauen, hat aber mehr Einschränkungen
 * `LR` gibt es in verschiedenen Schwierigkeitsgeraden
-  * `SLR`, `LALR`, `LR(1)`, `LR(2)`...
+  * `SLR`, `LALR`, `LR(1)`, `LR(0)`...
   * Linksfaktoren und Linksrekursionen möglich
 * `PEGs` sind nicht vergleichbar
 
 <div style="text-align: center">
-  <img src="grammatiken_vergleich.png" width="300" style="margin: 0 auto"/>
+  <img src="maechtigkeit.jpg" width="300" style="margin: 0 auto"/>
 </div>
 
 ---
@@ -428,7 +386,7 @@ Digit ::= '0' | '1' ... '9'
 
 <div style="position: relative">
   <img src="ll1-grammar.png" style="position: absolute; right:0px; top:0px; z-index: 1000"/>
-  <img src="ll-parser.dot.png" width="100%"/>
+  <img src="ll-parser.dot.svg" width="100%"/>
 </div>
 
 ---
@@ -456,21 +414,12 @@ then A else B
 ```
 
 <center>
-<img src="mehrdeutige-grammatik.dot.png"/>
+<img src="mehrdeutige-grammatik.dot.svg"/>
 </center>
 
 ---
 
 # Mehrdeutigkeiten auflösen
-
-Grammatik genauer formulieren!
-
-Beispiel:
-
-<div style="text-align: center; float:right">
-  <img src="grins.png" width="100"/>
-  <br/><b>FERTIG?</b>
-</div>
 
 ```ebnf
 E ::= E '*' E
@@ -482,7 +431,7 @@ E ::= E '*' E
 
 Mehrdeutig! Beispiel an der Eingabe `1 * 2 + 3`
 <div style="text-align: center">
-<img src="petite_grammar_1.dot.png"/>
+<img src="petite_grammar_1.dot.svg"/>
 </div>
 
 ---
@@ -604,10 +553,10 @@ Was ist der Syntaxbaum zu `10 - 20 - 30 - 40`?
 
 <tr>
 <td>
-<img src="left-asso.dot.png" height="250"/>
+<img src="left-asso.dot.svg" height="250"/>
 </td>
 <td>
-<img src="right-asso.dot.png" height="250"/>
+<img src="right-asso.dot.svg" height="250"/>
 </td>
 </tr>
 
@@ -645,6 +594,13 @@ Linksfaktor eliminieren wie vorhin gezeigt.
 
 # `LR`-Parser, kurz und gut
 
+<img src="lr-parser.jpg"/>
+
+---
+
+# `LR`-Parser in Aktion
+
+<img src="lr-parser-in-action.jpg"/>
 
 
 ---
