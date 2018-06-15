@@ -419,7 +419,8 @@ then A else B
 
 ---
 
-# Mehrdeutigkeiten auflösen
+# Vorrangregeln umsetzen
+
 
 ```ebnf
 E ::= E '*' E
@@ -428,22 +429,6 @@ E ::= E '*' E
    |  E '++'
    |  '(' E ')'
 ```
-
-Mehrdeutig! Beispiel an der Eingabe `1 * 2 + 3`
-<div style="text-align: center">
-<img src="petite_grammar_1.dot.svg"/>
-</div>
-
----
-
-# Vorrangregeln umsetzen
-
-Umsetzbar als Kaskade oder mit Generatorschaltern:
-
-<div style="text-align: center; float:right">
-  <img src="grins.png" width="120"/>
-  <br/><b>FERTIG?</b>
-</div>
 
 ```ebnf
 E ::= T '+' E
@@ -461,10 +446,16 @@ F ::= F '++'
 
 # Linksfaktoren eliminieren
 
-<div style="text-align: center; float:right">
-  <img src="grins.png" width="140"/>
-  <br/><b>FERTIG?</b>
-</div>
+```ebnf
+E ::= T '+' E
+   |  T
+T ::= F '*' T
+   |  F
+F ::= F '++'
+   |  NUM
+   | '(' E ')'
+```
+
 
 ```ebnf
 E  ::= T E'

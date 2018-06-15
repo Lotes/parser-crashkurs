@@ -18,25 +18,21 @@ var wss = new WebSocket.Server({server: server});
 server.listen(8080);
 console.log("Listening on http://localhost:8080");
 
+var connection = share.connect();
+var playerIndex = 1;
+
 // Connect any incoming WebSocket connection with ShareDB
 wss.on('connection', function(ws, req) {
+  const id = playerIndex++;
+  ws.send(JSON.stringify({ me: id }));
+
   var stream = new WebSocketJSONStream(ws);
   share.listen(stream);
-});
 
-// Create initial documents
-var connection = share.connect();
-connection.createFetchQuery('players', {}, {}, function(err, results) {
-  if (err) { throw err; }
+  const doc = connection.get('players', id.toString());
+  doc.create({ name: 'User '+id, source: 'abc...' });
 
-  if (results.length === 0) {
-    var names = ["Ada Lovelace", "Grace Hopper", "Marie Curie",
-                 "Carl Friedrich Gauss", "Nikola Tesla", "Claude Shannon"];
-
-    names.forEach(function(name, index) {
-      var doc = connection.get('players', ''+index);
-      var data = {name: name, score: Math.floor(Math.random() * 10) * 5};
-      doc.create(data);
-    });
-  }
+  ws.on('close', function close() {
+    doc.destroy();
+  });
 });

@@ -13,8 +13,9 @@
 
 .header {
   display: table-row;
+  border: 1px solid gray;
   height: 100px;
-  background-color: yellow;
+  background-color: white;
 }
 .content {
   position: absolute;
@@ -41,4 +42,17 @@
   height: 20px;
   display: table-row;
   background-color: green;
+}
+
+.playerList {
+  height: 100%;
+}
+.player {
+  float: left;
+}
+.selected {
+
+}
+.name {
+
 }
