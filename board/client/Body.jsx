@@ -1,10 +1,24 @@
-var React = require('react');
-var PlayerList = require('./PlayerList.jsx');
-var Connection = require('./Connection');
+import React from 'react';
+import Header from './Header.jsx';
+import Player from './Player.jsx';
+import Connection from './Connection';
+import Avatar from '@material-ui/core/Avatar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
 
-var Body = React.createClass({
-  getInitialState: function() {
-    return {
+function TabContainer({ children, dir }) {
+  return (
+    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+      {children}
+    </Typography>
+  );
+}
+
+class Body extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
       connection: new Connection(() => {
         const comp = this;
         this.query = this.state.connection.connection.createSubscribeQuery('players', {$sort: {name: 1}});
@@ -17,38 +31,42 @@ var Body = React.createClass({
       }),
       players: []
     };
-  },
+  }
 
-  componentDidMount: function() {
+  componentDidMount() {
 
-  },
+  }
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     this.query.destroy();
-  },
+  }
 
-  render: function() {
-    return (
-      <div className="app">
+  render() {
+    const playerNodes = this.state.players.map(doc => <Tab label={<Player doc={doc}/>}/>);
+    return (<div className="app">
         <div className="header">
           <div className="userListPane">
-            <PlayerList {...this.state}/>
+            <Header {...this.state}/>
           </div>
         </div>
         <div className="content">
-          <div className="editorPane">
-
-          </div>
-          <div className="validationPane">
-
+          <div className="tabs">
+            <Tabs
+              onChange={() => {}}
+              scrollable
+              scrollButtons="on"
+              indicatorColor="primary"
+              textColor="primary"
+            >
+              {playerNodes}
+            </Tabs>
+            <TabContainer dir="rtl">
+            lol
+            </TabContainer>
           </div>
         </div>
-        <div className="footer">
-            Made by Markus Rudolph
-        </div>
-    </div>
-    );
+      </div>);
   }
-});
+}
 
-module.exports = Body;
+export default Body;

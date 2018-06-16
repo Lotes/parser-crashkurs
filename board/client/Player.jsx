@@ -1,17 +1,23 @@
-var { Button } = require('muicss/react');
-var React = require('react');
-var classNames = require('classnames');
+import Button from '@material-ui/core/Button';
+import Badge from '@material-ui/core/Badge';
+import Avatar from '@material-ui/core/Avatar';
+import Chip from '@material-ui/core/Chip';
+import React from 'react';
 
-var Player = React.createClass({
-  propTypes: {
-    doc: React.PropTypes.object.isRequired
-  },
+class Player extends React.Component {
+  //propTypes: {
+  //  doc: React.PropTypes.object.isRequired
+  //},
 
-  handleClick: function(event) {
+  constructor(props) {
+    super(props);
+  }
 
-  },
+  handleClick(event) {
 
-  componentDidMount: function() {
+  }
+
+  componentDidMount() {
     var comp = this;
     var doc = comp.props.doc;
     doc.subscribe();
@@ -21,23 +27,24 @@ var Player = React.createClass({
       // `comp.props.doc.data` is now updated. re-render component.
       comp.forceUpdate();
     }
-  },
+  }
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     this.doc.unsubscribe();
-  },
+  }
 
-  render: function() {
-    var classes = {
-      'player': true
-    };
-
+  render() {
     return (
-      <div className={classNames(classes)}>
-        <Button color="primary" onClick={this.handleClick}>{this.props.doc.data.name}</Button>
+      <div className="player">
+        <Badge color="primary" badgeContent={4}>
+          <Chip
+            avatar={<Avatar src={"dist/avatars-"+this.props.doc.data.avatarId+".png"} />}
+            label={this.props.doc.data.name}
+          />
+        </Badge>
       </div>
     );
   }
-});
+}
 
-module.exports = Player;
+export default Player;

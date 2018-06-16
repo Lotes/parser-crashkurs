@@ -1,5 +1,5 @@
-var Body = require('./Body.jsx');
-var React = require('react');
-var ReactDOM = require('react-dom');
+import Body from './Body.jsx';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 ReactDOM.render(<Body />, document.querySelector('#main'));
