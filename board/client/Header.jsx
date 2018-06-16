@@ -50,15 +50,10 @@ class Header extends React.Component {
     const avatarId = this.state.editAvatarId;
     const players = this.props.players;
     const doc = players.find(doc => doc.id == this.props.connection.playerId);
-    doc.submitOp([
-      {p:['name', 0], sd: doc.data.name},
-    ], () => {});
-    doc.submitOp([
-      {p:['name', 0], si: this.state.editName},
-    ], () => {});
-    doc.submitOp([
-      {p:['avatarId'], na: avatarId - doc.data.avatarId}
-    ], () => {});
+    if(!doc)
+      return;
+    this.props.connection.setAvatar(this.state.editAvatarId);
+    this.props.connection.setName(this.state.editName);
   }
 
   render() {

@@ -36,19 +36,20 @@ console.log("Listening on http://localhost:8080");
 
 var connection = share.connect();
 var playerIndex = 1;
+var loginIndex = 1;
 
 // Connect any incoming WebSocket connection with ShareDB
 wss.on('connection', function(ws) {
   const address = ws._socket.remoteAddress;
-
-  console.log(address);
+  const loginId = loginIndex++;
 
   //register new players
   if(!(address in addresses)) {
     const playerId = playerIndex++;
+    console.log('* added new player '+playerId+' with address '+address)
     addresses[address] = {
       playerId: playerId,
-      count: 0
+      logins: []
     };
     const avatarId = playerId % 10;
     const doc = connection.get('players', playerId.toString());
@@ -60,19 +61,31 @@ wss.on('connection', function(ws) {
   }
 
   //inc usage of player
-  addresses[address].count++;
+  addresses[address].logins.push(loginId);
   const playerId = addresses[address].playerId;
-  ws.send(JSON.stringify({ me: playerId }));
+  ws.send(JSON.stringify({
+    me: playerId,
+    loginId: loginId
+  }));
+
+  //init source position
+  const login = connection.get('logins', loginId.toString());
+  login.create({
+    playerId: playerId,
+    charIndex: 0,
+    length: 0
+  });
 
   var stream = new WebSocketJSONStream(ws);
   share.listen(stream);
 
   //cleanup on disconnect
   ws.on('close', function close() {
-    addresses[address].count--;
-    if(addresses[address].count === 0) {
+    login.submitOp([{p:['playerId'], na: -login.data.playerId - 1}], () => {});
+    addresses[address].logins = addresses[address].logins.filter(id => id != loginId);
+    if(addresses[address].logins.length === 0) {
       const doc = connection.get('players', playerId.toString());
-      doc.destroy();
+
     }
   });
 });

@@ -7,6 +7,7 @@ import React from 'react';
 class Player extends React.Component {
   //propTypes: {
   //  doc: React.PropTypes.object.isRequired
+  //  loginCount: integer
   //},
 
   constructor(props) {
@@ -36,7 +37,7 @@ class Player extends React.Component {
   render() {
     return (
       <div className="player">
-        <Badge color="primary" badgeContent={4}>
+        <Badge color="secondary" badgeContent={this.props.loginCount}>
           <Chip
             avatar={<Avatar src={"dist/avatars-"+this.props.doc.data.avatarId+".png"} />}
             label={this.props.doc.data.name}
