@@ -117,9 +117,7 @@ var Body = function (_React$Component) {
         return doc.id == login.data.playerId;
       });
       var playerNodes = this.state.players.map(function (doc) {
-        return _react2.default.createElement(_Tab2.default, { key: doc.id, value: doc.id, label: _react2.default.createElement(_Player2.default, { loginCount: _this2.state.logins.filter(function (lg) {
-              return lg.data.playerId == doc.id;
-            }).length, doc: doc }) });
+        return _react2.default.createElement(_Tab2.default, { key: doc.id, value: doc.id, label: _react2.default.createElement(_Player2.default, { doc: doc, queryLogins: _this2.queryLogins }) });
       });
       return _react2.default.createElement(
         'div',
@@ -516,35 +514,72 @@ var Player = function (_React$Component) {
 
   //propTypes: {
   //  doc: React.PropTypes.object.isRequired
-  //  loginCount: integer
+  //  queryLogins: list of logins
   //},
 
   function Player(props) {
     _classCallCheck(this, Player);
 
-    return _possibleConstructorReturn(this, (Player.__proto__ || Object.getPrototypeOf(Player)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Player.__proto__ || Object.getPrototypeOf(Player)).call(this, props));
+
+    _this.state = {
+      loginCount: 0
+    };
+    return _this;
   }
 
   _createClass(Player, [{
-    key: 'handleClick',
-    value: function handleClick(event) {}
+    key: 'handleLoginsChanged',
+    value: function handleLoginsChanged() {
+      var self = this;
+      this.props.queryLogins.results.forEach(function (doc) {
+        doc.subscribe();
+        function updateLoad() {
+          self.handleLoginChanged();
+          doc.once('load', updateLoad);
+        }
+        doc.once('load', updateLoad);
+        function updateOp() {
+          self.handleLoginChanged();
+          doc.once('op', updateOp);
+        }
+        doc.once('op', updateOp);
+      });
+
+      this.handleLoginChanged();
+    }
+  }, {
+    key: 'handleLoginChanged',
+    value: function handleLoginChanged() {
+      var _this2 = this;
+
+      this.setState({
+        loginCount: this.props.queryLogins.results.filter(function (login) {
+          return login.data.playerId == _this2.props.doc.id;
+        }).length
+      });
+      this.forceUpdate();
+    }
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var comp = this;
       var doc = comp.props.doc;
       doc.subscribe();
-      doc.on('load', update);
-      doc.on('op', update);
-      function update() {
-        // `comp.props.doc.data` is now updated. re-render component.
-        comp.forceUpdate();
-      }
+      this.loginHandler = this.handleLoginChanged.bind(this);
+      doc.on('load', this.loginHandler);
+      doc.on('op', this.loginHandler);
+      this.loginsHandler = this.handleLoginsChanged.bind(this);
+      this.props.queryLogins.on('ready', this.loginsHandler);
+      this.props.queryLogins.on('changed', this.loginsHandler);
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       this.doc.unsubscribe();
+      this.props.queryLogins.removeListener('ready', this.loginsHandler);
+      this.props.queryLogins.removeListener('changed', this.loginsHandler);
+      this.loginsHandler = null;
     }
   }, {
     key: 'render',
@@ -554,7 +589,7 @@ var Player = function (_React$Component) {
         { className: 'player' },
         _react2.default.createElement(
           _Badge2.default,
-          { color: 'secondary', badgeContent: this.props.loginCount },
+          { color: 'secondary', badgeContent: this.state.loginCount },
           _react2.default.createElement(_Chip2.default, {
             avatar: _react2.default.createElement(_Avatar2.default, { src: "dist/avatars-" + this.props.doc.data.avatarId + ".png" }),
             label: this.props.doc.data.name

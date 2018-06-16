@@ -81,6 +81,7 @@ wss.on('connection', function(ws) {
 
   //cleanup on disconnect
   ws.on('close', function close() {
+    console.log('* logoff '+login.data.playerId);
     login.submitOp([{p:['playerId'], na: -login.data.playerId - 1}], () => {});
     addresses[address].logins = addresses[address].logins.filter(id => id != loginId);
     if(addresses[address].logins.length === 0) {

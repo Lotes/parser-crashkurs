@@ -56,7 +56,7 @@ class Body extends React.Component{
     }
     const login = this.state.logins.find(doc => doc.id == this.state.connection.loginId) || { data: { playerId: this.state.connection.playerId } };
     const selection = this.state.players.find(doc => doc.id == login.data.playerId);
-    const playerNodes = this.state.players.map(doc => <Tab key={doc.id} value={doc.id} label={<Player loginCount={this.state.logins.filter(lg => lg.data.playerId == doc.id).length} doc={doc}/>}/>);
+    const playerNodes = this.state.players.map(doc => <Tab key={doc.id} value={doc.id} label={<Player doc={doc} queryLogins={this.queryLogins}/>}/>);
     return (<div className="app">
         <div className="header">
           <div className="userListPane">
