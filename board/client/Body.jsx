@@ -7,6 +7,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Editor from './Editor.jsx';
 
 function TabContainer({ children, dir }) {
   return (
@@ -19,27 +20,8 @@ function TabContainer({ children, dir }) {
 class Body extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {
-      connection: new Connection(() => {
-        const comp = this;
-        this.query = this.state.connection.connection.createSubscribeQuery('players', {$sort: {name: 1}});
-        this.query.on('ready', update);
-        this.query.on('changed', update);
-        this.queryLogins = this.state.connection.connection.createSubscribeQuery('logins', {});
-        this.queryLogins.on('ready', updateLogins);
-        this.queryLogins.on('changed', updateLogins);
-
-        function update() {
-          comp.setState({players: comp.query.results});
-        }
-
-        function updateLogins() {
-          comp.setState({logins: comp.queryLogins.results});
-        }
-      }),
-      logins: [],
-      players: []
-    };
+    this.connection = new Connection();
+    this.connection.on('ready', () => this.forceUpdate());
   }
 
   componentDidMount() {
@@ -47,35 +29,44 @@ class Body extends React.Component{
   }
 
   componentWillUnmount() {
-    this.query.destroy();
+    
+  }
+
+  handleTabChanged(event, value) {
+    this.connection.setSource(value);
+    this.forceUpdate();
   }
 
   render() {
-    if(!this.state.connection.playerId) {
+    if(!this.connection.playerId) {
       return (<CircularProgress/>);
     }
-    const login = this.state.logins.find(doc => doc.id == this.state.connection.loginId) || { data: { playerId: this.state.connection.playerId } };
-    const selection = this.state.players.find(doc => doc.id == login.data.playerId);
-    const playerNodes = this.state.players.map(doc => <Tab key={doc.id} value={doc.id} label={<Player doc={doc} queryLogins={this.queryLogins}/>}/>);
-    return (<div className="app">
-        <div className="header">
-          <div className="userListPane">
-            <Header {...this.state}/>
-          </div>
-        </div>
-        <div className="content">
-          <Tabs
-            value={selection.id} onChange={a => {}}>
+    const login = this.connection.getLogin(this.connection.loginId);
+    const tabs = this.connection.players.map(doc => <Tab key={doc.id} value={doc.id} label={<Player doc={doc} connection={this.connection}/>}/>);
+    const selection = this.connection.getPlayer(login.data.playerId);
+    var content = (<CircularProgress/>);
+    if(selection)
+      content = (<div>
+         <Tabs
+            value={selection.id} onChange={this.handleTabChanged.bind(this)}>
             scrollable
             scrollButtons="on"
             indicatorColor="primary"
-            textColor="primary"
-          >
-            {playerNodes}
+            textColor="primary">
+            {tabs}
           </Tabs>
           <TabContainer dir="ltr">
-
+            <Editor connection={this.connection}/>
           </TabContainer>
+        </div>);
+    return (<div className="app">
+        <div className="header">
+          <div className="userListPane">
+            <Header connection={this.connection}/>
+          </div>
+        </div>
+        <div className="content">
+          {content}
         </div>
       </div>);
   }

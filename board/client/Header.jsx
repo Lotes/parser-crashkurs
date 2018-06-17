@@ -19,6 +19,8 @@ import Menu from '@material-ui/core/Menu';
 import List from '@material-ui/core/List';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
 const avatars = [0,1,2,3,4,5,6,7,8,9];
 
 class Header extends React.Component {
@@ -33,8 +35,7 @@ class Header extends React.Component {
   }
 
   editButtonClicked() {
-    const players = this.props.players;
-    const doc = players.find(doc => doc.id == this.props.connection.playerId);
+    const doc = this.props.connection.getPlayer(this.props.connection.playerId);
     if(doc)
       this.setState({
         open: true,
@@ -48,8 +49,7 @@ class Header extends React.Component {
       open: false
     })
     const avatarId = this.state.editAvatarId;
-    const players = this.props.players;
-    const doc = players.find(doc => doc.id == this.props.connection.playerId);
+    const doc = this.props.connection.getPlayer(this.props.connection.playerId);
     if(!doc)
       return;
     this.props.connection.setAvatar(this.state.editAvatarId);
@@ -69,13 +69,16 @@ class Header extends React.Component {
           <Dialog open={this.state.open} aria-labelledby="simple-dialog-title">
             <DialogTitle id="simple-dialog-title">Edit your avatar</DialogTitle>
             <DialogContent>
-              <div>
+              <RadioGroup className="avatars" onChange={(event, value) => this.setState({ editAvatarId: parseInt(value, 10) })}>
                 {avatars.map(avatar => (
-                  <Button key={avatar} onClick={() => this.setState({ editAvatarId: avatar })}>
-                    <Avatar src={"dist/avatars-"+avatar+".png"}/>
-                  </Button>
+                  <Radio
+                    key={avatar}
+                    icon={<Avatar className={this.state.editAvatarId == avatar ? 'checked' : 'unchecked'} src={"dist/avatars-"+avatar+".png"}/>}
+                    checked={this.state.editAvatarId == avatar}
+                    value={avatar.toString()}>
+                  </Radio>
                 ))}
-              </div>
+              </RadioGroup>
               <TextField
                 fullWidth
                 label="Name"

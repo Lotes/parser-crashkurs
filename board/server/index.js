@@ -6,6 +6,8 @@ var ShareDBMingoMemory = require('sharedb-mingo-memory');
 var WebSocketJSONStream = require('websocket-json-stream');
 var WebSocket = require('ws');
 var util = require('util');
+var shareCodeMirror = require('share-codemirror');
+
 
 const avatars = [
   'Form-AL',
@@ -56,7 +58,7 @@ wss.on('connection', function(ws) {
     doc.create({
       avatarId: avatarId,
       name: avatars[avatarId],
-      source: ''
+      source: '123'
     });
   }
 

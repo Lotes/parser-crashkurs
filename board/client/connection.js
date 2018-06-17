@@ -1,65 +1,78 @@
 import sharedb from 'sharedb/lib/client';
+import EventEmitter from 'events';
 
-function Connection(readyCallback) {
-  // Expose a singleton WebSocket connection to ShareDB server
-  const socket = new WebSocket('ws://' + window.location.host);
-  const self = this;
-  function fetchId(data) {
-    try{ data = JSON.parse(data.data); }catch(e) {}
-    if('me' in data) {
-      self.connection = new sharedb.Connection(socket);
-      self.playerId = data.me;
-      self.loginId = data.loginId;
-      console.log('I am player '+self.playerId+' on login number '+self.loginId+'.');
-      socket.removeEventListener('message', fetchId);
-      readyCallback();
+class Connection extends EventEmitter {
+  constructor() {
+    super();
+    // Expose a singleton WebSocket connection to ShareDB server
+    const socket = new WebSocket('ws://' + window.location.host);
+    const self = this;
+    function fetchId(data) {
+      try{ data = JSON.parse(data.data); }catch(e) {}
+      if('me' in data) {
+        self.connection = new sharedb.Connection(socket);
+        self.playerId = data.me;
+        self.loginId = data.loginId;
+        console.log('I am player '+self.playerId+' on login number '+self.loginId+'.');
+        socket.removeEventListener('message', fetchId);
+
+        const handlerPlayers = () => self.emit('playersChanged');
+        self.queryPlayers = self.connection.createSubscribeQuery('players', {$sort: {name: 1}});
+        self.queryPlayers.on('changed', handlerPlayers);
+
+        const handlerLogins = () => self.emit('loginsChanged');
+        self.queryLogins = self.connection.createSubscribeQuery('logins', {});
+        self.queryLogins.on('changed', handlerLogins);
+
+        var readyCount = 2;
+        const handlerReady = () => {
+          if(--readyCount <= 0)
+            self.emit('ready');
+        };
+        self.queryLogins.once('ready', handlerReady);
+        self.queryPlayers.once('ready', handlerReady);
+      }
     }
+    socket.addEventListener('message', fetchId);
+    this.playerId = null;
+    this.loginId = null;
+    this.connection = null;
   }
-  socket.addEventListener('message', fetchId);
-  this.playerId = null;
-  this.loginId = null;
-  this.connection = null;
-}
-
-Connection.prototype = {
-  setName: function(name) {
-    const player = this.connection.get('players', this.playerId.toString());
-    const op1 = [{p: ['name', 0], sd: player.data.name}];
-    const op2 = [{p: ['name', 0], si: name}];
-    player.submitOp(op1, function(err) {
+  getPlayer(id) {
+    return this.connection.get('players', id.toString());
+  }
+  getLogin(id) {
+    return this.connection.get('logins', id.toString());
+  }
+  get players() { return this.queryPlayers.results; }
+  get logins() { return this.queryLogins.results; }
+  setName(name) {
+    const player = this.getPlayer(this.playerId);
+    const ops = [{p: ['name', 0], sd: player.data.name}, {p: ['name', 0], si: name}];
+    player.submitOp(ops, function(err) {
       if (err) { console.error(err); return; }
     });
-    player.submitOp(op2, function(err) {
-      if (err) { console.error(err); return; }
-    });
-  },
-  setAvatar: function(value) {
-    const player = this.connection.get('players', this.playerId.toString());
+  }
+  setAvatar(value) {
+    const player = this.getPlayer(this.playerId);
     value = value % 10;
-    doc.submitOp([
+    player.submitOp([
       {p:['avatarId'], na: value - player.data.avatarId}
     ], function(err) {
       if (err) { console.error(err); return; }
     });
-  },
-  setSource: function(playerId) {
-    const login = this.connection.get('logins', this.loginId.toString());
+  }
+  setSource(playerId) {
+    const doc = this.getLogin(this.loginId);
     doc.submitOp([
-      {p:['playerId'], na: playerId - login.data.playerId}
-    ], function(err) {
+      {p:['playerId'], na: playerId - doc.data.playerId},
+      {p:['charIndex'], na: -doc.data.charIndex},
+      {p:['length'], na: -doc.data.length}
+    ], (err) => {
       if (err) { console.error(err); return; }
-    });
-    doc.submitOp([
-      {p:['charIndex'], na: -login.data.charIndex}
-    ], function(err) {
-      if (err) { console.error(err); return; }
-    });
-    doc.submitOp([
-      {p:['length'], na: -login.data.length}
-    ], function(err) {
-      if (err) { console.error(err); return; }
+      this.emit('sourceChanged', playerId);
     });
   }
-};
+}
 
 export default Connection;

@@ -28,8 +28,12 @@
 .selected {
 
 }
-.name {
+.checked {
+  border: 2px red solid;
+}
 
+.avatars {
+  flex-direction: row !important;
 }
 
 
