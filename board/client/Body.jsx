@@ -8,10 +8,11 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Editor from './Editor.jsx';
+import Runner from './Runner.jsx';
 
 function TabContainer({ children, dir }) {
   return (
-    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+    <Typography component="div" dir={dir} className="tabsBody">
       {children}
     </Typography>
   );
@@ -29,7 +30,7 @@ class Body extends React.Component{
   }
 
   componentWillUnmount() {
-    
+
   }
 
   handleTabChanged(event, value) {
@@ -46,8 +47,9 @@ class Body extends React.Component{
     const selection = this.connection.getPlayer(login.data.playerId);
     var content = (<CircularProgress/>);
     if(selection)
-      content = (<div>
+      content = (<div className="tabsContainer">
          <Tabs
+            className="tabsHeader"
             value={selection.id} onChange={this.handleTabChanged.bind(this)}>
             scrollable
             scrollButtons="on"
@@ -56,7 +58,12 @@ class Body extends React.Component{
             {tabs}
           </Tabs>
           <TabContainer dir="ltr">
-            <Editor connection={this.connection}/>
+            <div className="editor">
+              <Editor  connection={this.connection}/>
+            </div>
+            <div className="runner">
+              <Runner connection={this.connection}/>
+            </div>
           </TabContainer>
         </div>);
     return (<div className="app">
@@ -65,7 +72,7 @@ class Body extends React.Component{
             <Header connection={this.connection}/>
           </div>
         </div>
-        <div className="content">
+        <div className="content maxHeight">
           {content}
         </div>
       </div>);

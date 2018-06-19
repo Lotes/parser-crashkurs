@@ -16,9 +16,10 @@ class Editor extends React.Component{
   componentDidMount() {
     const textArea = ReactDOM.findDOMNode(this);
     const editor = CodeMirror.fromTextArea(textArea, {
-      lineNumbers: true
+      lineNumbers: true,
+      mode: { name: 'ebnf' },
+      matchBrackets: true
     });
-    editor.setOption('mode', 'ebnf');
     this.attachEditor(editor);
     this.props.connection.on('sourceChanged', () => {
       this.detachEditor();
@@ -50,7 +51,7 @@ class Editor extends React.Component{
 
   render() {
     return (
-      <textarea className="editor"/>
+      <textarea className="maxHeight"/>
     );
   }
 }

@@ -6,6 +6,11 @@
   margin: 0;
 }
 
+.CodeMirror {
+  border: 1px solid #eee;
+  height: 100%;
+}
+
 .app {
   display: flex;
   height: 100%;
@@ -39,4 +44,31 @@
 
 .list-horizontal-display > div {
     display: inline-block;
+}
+
+.maxHeight {
+  height: 100%;
+}
+
+.tabsContainer {
+  display: flex !important;
+}
+
+.tabsBody {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.tabsHeader {
+  width: 100%;
+  flex: 0 1 auto;
+}
+
+.editor, .runner {
+  width: 50%;
+  height: 100%;
+}
+
+.runner {
+  background-color:  red;
 }
