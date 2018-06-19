@@ -372,9 +372,8 @@ Darauffolgende Phasen auch! Darum gibt es hier einen Schnitt!
 
 * `LL` ist einfacher nachzubauen, hat aber mehr Einschränkungen
 * `LR` gibt es in verschiedenen Schwierigkeitsgeraden
-  * `SLR`, `LALR`, `LR(1)`, `LR(0)`...
+  * `SLR`, `LALR`, `LR(1)`, `LR(0)`, `LR(k)`...
   * Linksfaktoren und Linksrekursionen möglich
-* `PEGs` sind nicht vergleichbar
 
 <div style="text-align: center">
   <img src="maechtigkeit.jpg" width="300" style="margin: 0 auto"/>
@@ -388,6 +387,18 @@ Darauffolgende Phasen auch! Darum gibt es hier einen Schnitt!
   <img src="ll1-grammar.png" style="position: absolute; right:0px; top:0px; z-index: 1000"/>
   <img src="ll-parser.dot.svg" width="100%"/>
 </div>
+
+---
+
+# `LR`-Parser, kurz und gut
+
+<img src="lr-parser.jpg"/>
+
+---
+
+# `LR`-Parser in Aktion
+
+<img src="lr-parser-in-action.jpg"/>
 
 ---
 
@@ -421,6 +432,7 @@ then A else B
 
 # Vorrangregeln umsetzen
 
+Folgende Grammatik ist mehrdeutig. Durch Umssetzen von Vorrangregeln mittels <i>Operator-Kaskade</i> oder <i>Operator-Deklaration</i>.
 
 ```ebnf
 E ::= E '*' E
@@ -430,6 +442,8 @@ E ::= E '*' E
    |  '(' E ')'
 ```
 
+Dabei liegen die stärker bindenen Operatoren näher an der Low-Level-Regel `F` und lockere Operatoren näher an der High-Level-Regel `E`.
+
 ```ebnf
 E ::= T '+' E
    |  T
@@ -440,12 +454,14 @@ F ::= F '++'
    | '(' E ')'
 ```
 
-`LR`-Parser ist zufrieden. `LL`-Parser ist unschlüssig, weil `E` zwei Alternativen hat, die mit `T` anfangen.
+`LR`-Parser sind ab jetzt schon zufrieden. `LL`-Parser ist unschlüssig, weil `E` zwei Alternativen hat, die mit `T` anfangen.
 
 ---
 
 # Linksfaktoren eliminieren
 
+`LL`-Parser streikt, da Linksfaktoren mehrdeutige Einträge in der Parsingtabelle eintragen würde.
+
 ```ebnf
 E ::= T '+' E
    |  T
@@ -456,6 +472,7 @@ F ::= F '++'
    | '(' E ')'
 ```
 
+Lösung: Faktoren rausziehen und einzeln aufführen.
 
 ```ebnf
 E  ::= T E'
@@ -469,25 +486,30 @@ F  ::= F '++'
     |  '(' E ')'
 ```
 
-`LR`-Parser ist schon längst zufrieden.
-`LL`-Parser beschwert sich über die Linksrekursion in `F`.
+`LL`-Parser beschwert sich jetzt noch über die Linksrekursion in `F`.
 
 ---
 
 # Linksrekursionen ersetzen
 
-<div style="text-align: center; float:right">
-  <img src="grins.png" width="160"/>
-  <br/><b>FERTIG?</b>
-</div>
+Linksrekursionen würden den Parser in eine Endlosschleife schicken.
 
 ```ebnf
-...
+F  ::= F '++'
+    |  NUM
+    |  '(' E ')'
+```
+
+Die folgende Transformation löst die Rekursion auf!
+
+```ebnf
 F  ::= NUM F'
     |  '(' E ')' F'
 F' ::= '++'
     |  &epsilon;
 ```
+
+---
 
 ### Noch nicht ganz fertig!
 
@@ -504,26 +526,27 @@ Arguments    ::= Argument (',' Argument)*
 
 Hier muss man die Iteration durch eine Rekursion ersetzen!
 
+```ebnf
+FunctionCall ::= Id '(' Arguments? ')'
+Arguments    ::= Argument (',' Argument)*
+```
 
-<div style="text-align: center; float:right">
-  <img src="grins.png" width="200"/>
-  <br/><b>FERTIG?</b>
-</div>
+wird also zu:
 
-```èbnf
+```ebnf
 FunctionCall ::= Id '(' ArgumentList ')'
 ArgumentList ::= Arguments
               |  &epsilon;
 Arguments    ::= Argument Arguments'
 Arguments'   ::= &epsilon;
-              | ',' Arguments'
+              | ',' Arguments
 ```
 
 ---
 
 # Assoziativität
 
-Links oder rechts? Verdammt wichtig bei Operatoren!
+Links oder rechts? Verdammt wichtig bei nicht-assoziativen Operatoren!
 
 ### Beispiel: Subtraktion mit `-`!
 
@@ -583,19 +606,6 @@ Linksfaktor eliminieren wie vorhin gezeigt.
 
 ---
 
-# `LR`-Parser, kurz und gut
-
-<img src="lr-parser.jpg"/>
-
----
-
-# `LR`-Parser in Aktion
-
-<img src="lr-parser-in-action.jpg"/>
-
-
----
-
 <center>
   <h1>Manuelles Parsen</h1>
   <h3>Zwei Wege</h3>
@@ -620,11 +630,13 @@ Term ::= Primary '*' Term | Primary
 Primary ::= NUMBER | '(' Expr  ')'
 ```
 
+Man benötigt hierfür eine `LL`-Grammatik!
+
 ---
 
 # Parsen mittels Rekursion
 
-Implementierung: Jede Regel eine Funktion!
+Implementierung: Jede Grammatikregel eine Funktion!
 
 ```ebnf
 Expr ::= Term '+' Expr | Term
@@ -636,11 +648,6 @@ wird zu
 ExpressionNode Expression() {
   var left = Term();
   if(TryConsume(PLUS)) {
-
-    /*if(lookahead.type==PLUS) {
-      lookahead++; return true; }
-      else return false; */
-
     var right = Expr();
     return new BinaryExprNode(ADD, left, right);
   } else {
@@ -690,7 +697,7 @@ ExpressionNode Primary() {
       lookahead++;
       return result;
     case LPARENTHESIS:
-      NextToken();
+      lookahead++;
       var result = Expr();
       Consume(RPARENTHESIS); //throws exception, if not exists
       return result;
@@ -716,23 +723,20 @@ Grundlegende Operationen auf <i>praktischen</i> Sprachen sind:
 
 # Parsen mittels Kombinatoren
 
-Beispiel: ein Wort konsumieren
+Beispiel für die Erkennung von Zahlen:
 
 ```csharp
-bool TryConsume(ref int position, string text) {
-  if(input.At(position).startsWith(text)) {
-    position += text.Length;
-    return true;
-  } else
-    return false;
-}
+Start = Code(OneOrMore(Digit), text => Convert.ToInt32(text));
+Digit = Or(Char('0'), Char('1'), ... Char('8'), Char('9'));
+
+Assert.AreEqual(123, Start.Parse("123"));
+
+Start.Parse("abc"); //throws exception
 ```
 
-Konkatenation:
+---
 
-```csharp
-bool
-```
+TODO https://github.com/otac0n/Pegasus/tree/develop/Pegasus/
 
 ---
 
