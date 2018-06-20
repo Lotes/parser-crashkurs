@@ -72,7 +72,7 @@ class Body extends React.Component{
             <Header connection={this.connection}/>
           </div>
         </div>
-        <div className="content maxHeight">
+        <div className="content">
           {content}
         </div>
       </div>);

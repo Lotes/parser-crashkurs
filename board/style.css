@@ -6,11 +6,6 @@
   margin: 0;
 }
 
-.CodeMirror {
-  border: 1px solid #eee;
-  height: 100%;
-}
-
 .app {
   display: flex;
   height: 100%;
@@ -21,7 +16,8 @@
   flex: 0 1 auto;
 }
 .content {
-  flex: 1 1 auto;
+  flex: 1 1 content;
+  height:auto;
 }
 
 .Header {
@@ -46,22 +42,31 @@
     display: inline-block;
 }
 
+
+
+
 .maxHeight {
+  height: 100%;
+}
+
+.CodeMirror {
+  border: 1px solid #eee;
   height: 100%;
 }
 
 .tabsContainer {
   display: flex !important;
-}
-
-.tabsBody {
-  width: 100%;
-  flex: 1 1 auto;
+  flex-direction: column;
+  height: auto;
 }
 
 .tabsHeader {
   width: 100%;
   flex: 0 1 auto;
+}
+
+.tabsBody {
+  flex: 1 1 auto;
 }
 
 .editor, .runner {

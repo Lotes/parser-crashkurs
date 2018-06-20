@@ -151,7 +151,7 @@ var Body = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'content maxHeight' },
+          { className: 'content' },
           content
         )
       );
