@@ -424,9 +424,10 @@ if condition then if(condition2)
 then A else B
 ```
 
-<center>
+<div style="text-align: center; position: relative">
+<img src="travolta.gif" width="25%" style="left: 37%; position: absolute; bottom: 0; "/>
 <img src="mehrdeutige-grammatik.dot.svg"/>
-</center>
+</div>
 
 ---
 
