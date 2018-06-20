@@ -94,13 +94,18 @@ wss.on('connection', function(ws) {
   });
 });
 
+//get tests
+app.get('/tests', function(req, res) {
+  res.send("buhhh");
+});
+
 /*
 Results:
 {
   results: {
     0: false,
     1: true,
-    2: [errors...],
+    2: [1,2,3],//error indices
   },
   errors: [{
     line: 123,
@@ -109,15 +114,16 @@ Results:
   }]
 }
 */
+
 //compile and test
-app.post('/test/:playerId', function(req, res) {
+app.post('/tests/:playerId', function(req, res) {
   res.send(req.params.playerId);
 });
 
 //compile and run single test
-app.post('/test/:playerId/byId/:testId', function(req, res) {
+app.post('/tests/:playerId/byId/:testId', function(req, res) {
   res.send(req.params.playerId+' -> '+req.params.testId);
 });
 
-server.listen(8080);
-console.log("Listening on http://localhost:8080");
+server.listen(8081);
+console.log("Listening on http://localhost:8081");
