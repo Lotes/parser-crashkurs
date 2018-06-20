@@ -6,18 +6,12 @@
   margin: 0;
 }
 
-.app {
-  display: flex;
-  height: 100%;
-  flex-flow: column;
-}
-
 .header {
-  flex: 0 1 auto;
+
 }
 .content {
-  flex: 1 1 content;
-  height:auto;
+
+  height: 100%;
 }
 
 .Header {
@@ -42,38 +36,54 @@
     display: inline-block;
 }
 
-
-
-
-.maxHeight {
+.app {
+  width: 100%;
   height: 100%;
+  display: table;
 }
 
-.CodeMirror {
-  border: 1px solid #eee;
-  height: 100%;
-}
-
-.tabsContainer {
-  display: flex !important;
-  flex-direction: column;
-  height: auto;
+.appHeader {
+  width: 100%;
+  display: table-row;
 }
 
 .tabsHeader {
   width: 100%;
-  flex: 0 1 auto;
+  display: table-row;
 }
 
 .tabsBody {
-  flex: 1 1 auto;
+  display: table-row;
+  height: 100%;
 }
 
-.editor, .runner {
-  width: 50%;
+.tabsBodyContent {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.CodeMirror {
+  display: table-row;
+  position: absolute;
+  border: 1px solid #eee;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   height: 100%;
 }
 
 .runner {
   background-color:  red;
+  width: 50%;
+  display: table-cell;
+  height: 100%;
+}
+
+.editor {
+  width: 50%;
+  display: table-cell;
+  position: relative;
+  height: 100%;
 }

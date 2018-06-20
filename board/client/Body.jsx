@@ -45,37 +45,35 @@ class Body extends React.Component{
     const login = this.connection.getLogin(this.connection.loginId);
     const tabs = this.connection.players.map(doc => <Tab key={doc.id} value={doc.id} label={<Player doc={doc} connection={this.connection}/>}/>);
     const selection = this.connection.getPlayer(login.data.playerId);
-    var content = (<CircularProgress/>);
-    if(selection)
-      content = (<div className="tabsContainer">
-         <Tabs
-            className="tabsHeader"
-            value={selection.id} onChange={this.handleTabChanged.bind(this)}>
-            scrollable
-            scrollButtons="on"
-            indicatorColor="primary"
-            textColor="primary">
-            {tabs}
-          </Tabs>
-          <TabContainer dir="ltr">
-            <div className="editor">
-              <Editor  connection={this.connection}/>
+
+    if(selection) {
+      return (<div className="app">
+            <Header className="appHeader" connection={this.connection}/>
+            <Tabs
+               className="tabsHeader"
+               value={selection.id} onChange={this.handleTabChanged.bind(this)}>
+               scrollable
+               scrollButtons="on"
+               indicatorColor="primary"
+               textColor="primary">
+               {tabs}
+             </Tabs>
+             <div className="tabsBody">
+               <div className="tabsBodyContent">
+                 <div className="editor">
+                   <Editor connection={this.connection}/>
+                 </div>
+                 <div className="runner">
+                   <Runner connection={this.connection}/>
+                 </div>
+               </div>
             </div>
-            <div className="runner">
-              <Runner connection={this.connection}/>
-            </div>
-          </TabContainer>
         </div>);
-    return (<div className="app">
-        <div className="header">
-          <div className="userListPane">
-            <Header connection={this.connection}/>
-          </div>
-        </div>
-        <div className="content">
-          {content}
-        </div>
-      </div>);
+    } else {
+      return (<div className="app">
+            <CircularProgress/>
+        </div>);
+    }
   }
 }
 
