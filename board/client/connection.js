@@ -66,11 +66,24 @@ class Connection extends EventEmitter {
     const doc = this.getLogin(this.loginId);
     doc.submitOp([
       {p:['playerId'], na: playerId - doc.data.playerId},
-      {p:['charIndex'], na: -doc.data.charIndex},
-      {p:['length'], na: -doc.data.length}
+      {p:['headLine'], na: -doc.data.headLine},
+      {p:['headCh'], na: -doc.data.headCh},
+      {p:['anchorLine'], na: -doc.data.anchorLine},
+      {p:['anchorCh'], na: -doc.data.anchorCh}
     ], (err) => {
       if (err) { console.error(err); return; }
       this.emit('sourceChanged', playerId);
+    });
+  }
+  setCursor(head, anchor) {
+    const doc = this.getLogin(this.loginId);
+    doc.submitOp([
+      {p:['headLine'], na: head.line-doc.data.headLine},
+      {p:['headCh'], na: head.ch-doc.data.headCh},
+      {p:['anchorLine'], na: anchor.line-doc.data.anchorLine},
+      {p:['anchorCh'], na: anchor.ch-doc.data.anchorCh}
+    ], (err) => {
+      if (err) { console.error(err); return; }
     });
   }
 }

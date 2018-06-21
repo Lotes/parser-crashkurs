@@ -9,6 +9,8 @@ var util = require('util');
 var shareCodeMirror = require('share-codemirror');
 const fs = require('fs');
 const path = require('path');
+const bodyParser = require('body-parser');
+const playground = require('./playground');
 
 const startCode = fs.readFileSync(path.join(__dirname, 'start-grammar.jison'), 'utf8');
 
@@ -34,6 +36,8 @@ var share = ShareDB({db: new ShareDBMingoMemory()});
 // Create a WebSocket server
 var app = express();
 app.use(serveStatic('.'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 var server = http.createServer(app);
 var wss = new WebSocket.Server({server: server});
 
@@ -75,8 +79,10 @@ wss.on('connection', function(ws) {
   const login = connection.get('logins', loginId.toString());
   login.create({
     playerId: playerId,
-    charIndex: 0,
-    length: 0
+    headLine: 0,
+    headCh: 0,
+    anchorLine: 0,
+    anchorCh: 0
   });
 
   var stream = new WebSocketJSONStream(ws);
@@ -90,6 +96,31 @@ wss.on('connection', function(ws) {
     if(addresses[address].logins.length === 0) {
       //const doc = connection.get('players', playerId.toString());
       //doc.destroy();
+    }
+  });
+});
+
+app.post('/run/:playerId', function(req, res) {
+  const input = req.body.input;
+  const playerId = req.params.playerId;
+  const document = connection.get('players', playerId);
+  playground.compile(document.data.source, function(err, parser) {
+    if(err)
+      return res.send({
+        output: null,
+        error: err.message
+      });
+    try {
+      console.log(`Tested document ${playerId} with input "${input}"`);
+      return res.send({
+        output: parser.parse(input),
+        error: null
+      });
+    } catch(err2) {
+      return res.send({
+        output: null,
+        error: err2.message
+      });
     }
   });
 });

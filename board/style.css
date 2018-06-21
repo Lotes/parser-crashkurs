@@ -9,6 +9,11 @@
 .header {
 
 }
+
+.marked {
+  background-color: yellow;
+}
+
 .content {
 
   height: 100%;
@@ -75,7 +80,7 @@
 }
 
 .runner {
-  background-color:  red;
+  background-color:  white;
   width: 50%;
   display: table-cell;
   height: 100%;
@@ -86,4 +91,9 @@
   display: table-cell;
   position: relative;
   height: 100%;
+}
+
+
+.runner-bar {
+  background-color: #f0f0f0;
 }
