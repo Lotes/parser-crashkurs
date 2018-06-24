@@ -114,7 +114,7 @@
 
 ---
 
-# Backus-Naur-Form
+# Grammatikaufbau
 
 ### Grammatikregeln
 
@@ -136,7 +136,7 @@ Entweder in From von Strings oder in Form von regulären Ausdrücken.
 
 ---
 
-# Backus-Naur-Form...
+# Grammatikaufbau...
 
 ### Nichtterminale
 
@@ -149,7 +149,7 @@ DIGIT ::= '0' | ... | '9'
 
 ---
 
-# Backus-Naur-Form...
+# Grammatikaufbau...
 
 ### Pseudoterminale und Rückgabetypen
 
@@ -164,7 +164,7 @@ Pseudoterminale sind ein gängiges Vorgehen um abstrakte Syntaxbäume aufzubauen
 
 ---
 
-# Backus-Naur-Form...
+# Grammatikaufbau...
 
 ### Plattformspezifische Bestandteile
 
@@ -228,7 +228,7 @@ expression      : literal
 # Sprackklassen
 
 * Formale Sprachen (Chomsky-Hierarchie)
-  * Typ-0-Grammatik: semientscheidbare Sprachen
+  * Typ-0-Grammatik: alle Sprachen
   * Typ-1-Grammatik: kontextsensitive Sprachen
   * Typ-2-Grammatik: kontextfreie Sprachen
   * Typ-3-Grammatik: reguläre Ausdrücke
@@ -420,14 +420,24 @@ Stmt ::= 'if' Expr 'then' Stmt 'else' Stmt
 Mögliche Syntaxbäume für
 
 ```
-if condition then if(condition2)
-then A else B
+if condition then
+if condition2 then A
+else B
 ```
 
-<div style="text-align: center; position: relative">
-<img src="travolta.gif" width="25%" style="left: 37%; position: absolute; bottom: 0; "/>
-<img src="mehrdeutige-grammatik.dot.svg"/>
-</div>
+<table>
+<tr>
+<td>
+<img src="mehrdeutige-grammatik-links.dot.svg"/>
+</td>
+<td style="text-align: center">
+<img src="travolta.gif" style="width:50%"/>
+</td>
+<td>
+<img src="mehrdeutige-grammatik-rechts.dot.svg"/>
+</td>
+</tr>
+</table>
 
 ---
 
@@ -436,23 +446,16 @@ then A else B
 Folgende Grammatik ist mehrdeutig. Durch Umssetzen von Vorrangregeln mittels <i>Operator-Kaskade</i> oder <i>Operator-Deklaration</i>.
 
 ```ebnf
-E ::= E '*' E
-   |  E '+' E
-   |  NUM
-   |  E '++'
-   |  '(' E ')'
+E ::= E '*' E |  E '+' E
+    | NUM |  E '++' |  '(' E ')'
 ```
 
 Dabei liegen die stärker bindenen Operatoren näher an der Low-Level-Regel `F` und lockere Operatoren näher an der High-Level-Regel `E`.
 
 ```ebnf
-E ::= T '+' E
-   |  T
-T ::= F '*' T
-   |  F
-F ::= F '++'
-   |  NUM
-   | '(' E ')'
+E ::= T '+' E | T
+T ::= F '*' T | F
+F ::= F '++'  | NUM | '(' E ')'
 ```
 
 `LR`-Parser sind ab jetzt schon zufrieden. `LL`-Parser ist unschlüssig, weil `E` zwei Alternativen hat, die mit `T` anfangen.
@@ -514,7 +517,7 @@ F' ::= '++'
 
 ### Noch nicht ganz fertig!
 
-Manche Generatoren (wie `jison`) mögen keine mit `*` oder `+` definierten Listen.
+`LR`-Generatoren (wie `jison`) mögen keine mit `*` oder `+` definierten Listen.
 
 ```ebnf
 FunctionCall ::= Id '(' Arguments? ')'
@@ -737,7 +740,47 @@ Start.Parse("abc"); //throws exception
 
 ---
 
-TODO https://github.com/otac0n/Pegasus/tree/develop/Pegasus/
+# Parsen mittels Kombinatoren
+
+Grundsätzliches Vorgehen:
+
+```csharp
+public ParseResult<string> Parse_X(string input, int postition, X x) {
+  //gebe den AST zurück, falls X parsebar, ansonsten NOTHING
+}
+```
+
+---
+
+# Parsen mittels Kombinatoren
+
+Einfaches Beispiel:
+
+```csharp
+public ParseResult Parse_Char(string input, int postition, Char c) {
+  if(input[position] == c)
+    return new ParseResult(position, c);
+  return ParseResult.Nothing;
+}
+```
+
+---
+
+# Parsen mittels Kombinatoren
+
+Komplexeres Beispiel:
+
+```csharp
+public ParseResult Parse_Choice(string input, int postition, Choice choice) {
+  foreach (var element in choice.Choices)
+  {
+    var result = element.ParseAt(this, position); //visitor pattern!
+    if (result != ParseResult.Nothing)
+      return new ParseResult(result.Value, choice, ...);
+  }
+  return ParseResult.Nothing;
+}
+```
 
 ---
 

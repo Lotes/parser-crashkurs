@@ -1,0 +1,10 @@
+digraph G {
+  node [shape=record];
+  stmt1 [label="Stmt|if"]
+  stmt2 [label="Stmt|if"]
+  stmtA [label="Stmt|A"]
+  stmtB [label="Stmt|B"]
+  stmt1 -> stmt2 [label="then"]
+  stmt2 -> stmtA [label="then"]
+  stmt2 -> stmtB [label="else"]
+}
