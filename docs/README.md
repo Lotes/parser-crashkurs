@@ -22,9 +22,6 @@
 * Formulieren von Sachverhalt in der Domäne des Sachverhaltes (domänenspezifische Sprachen wie CSS)
 * Angst nehmen Sprachen zu entwickeln
 
-<div style="color: gray; position: absolute; bottom: 1em; right: 1em; left: 1em">
-  Diese Präsentation wurde mittels Markdown-, GraphViz-, CSS- und EBNF-Sprachen realisiert. Änderungen konnten deswegen automatisiert umgesetzt werden.
-</div>
 ---
 
 # Abgrenzung
@@ -97,7 +94,7 @@
 
 ---
 
-# Operationen auf Sprachen
+# Operationen in Grammatik
 
 * ein Wort `A` ist eine Abfolge von Buchstaben
 * die Konkatenation von Wörtern `A` und `B` ist wieder ein Wort `AB`.
@@ -716,11 +713,11 @@ ExpressionNode Primary() {
 
 Im Prinzip genau das selbe! Nur in Funktionen versteckt.
 
-Grundlegende Operationen auf <i>praktischen</i> Sprachen sind:
+Grundlegende Operationen auf <i>praktischen</i> Grammatiken sind:
 
 * Konsumierung von Buchstaben `'hallo'` (bilden ein <i>Wort</i>)
-* Konkatenierung von Wörtern `AB`
-* endliche Wiederholung von Wörtern `A*`
+* Konkatenierung von Wörtern `A` und `B` zu `AB`
+* endliche Wiederholung von Wörtern `A` zu `A*`
 * <u>priorisierte</u> Alternativen von Wörtern `A / B / C` (Patternmatching oder `switch`-Anweisung)
 
 ---
