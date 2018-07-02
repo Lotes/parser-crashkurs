@@ -447,7 +447,7 @@ E ::= E '*' E |  E '+' E
     | NUM |  E '++' |  '(' E ')'
 ```
 
-Dabei liegen die stärker bindenen Operatoren näher an der Low-Level-Regel `F` und lockere Operatoren näher an der High-Level-Regel `E`.
+Dabei liegen die stärker bindenen Operatoren näher an der Low-Level-Regel `F` und lockere Operatoren näher an der High-Level-Regel `E` (Test: Versucht mal 2 Bäume zum selben Ausdruck zu finden!).
 
 ```ebnf
 E ::= T '+' E | T
@@ -477,10 +477,10 @@ Lösung: Faktoren rausziehen und einzeln aufführen.
 
 ```ebnf
 E  ::= T E'
-E' ::= '+' T E'
+E' ::= '+' E
     |  &epsilon;
 T  ::= F T'
-T' ::= '*' F T'
+T' ::= '*' T
     |  &epsilon;
 F  ::= F '++'
     |  NUM
@@ -505,8 +505,8 @@ Die folgende Transformation löst die Rekursion auf!
 
 ```ebnf
 F  ::= NUM F'
-    |  '(' E ')' F'
-F' ::= '++'
+    | '(' E ')' F'
+F' ::= '++' F'
     |  &epsilon;
 ```
 
